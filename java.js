@@ -6,7 +6,7 @@ $(document).ready(function () {
     $.getJSON('https://ipinfo.io', function (data) {
         loc = data.loc.split(",");
         console.log(loc);
-        $.getJSON("https://api.openweathermap.org/data/2.5/weather?lat=" + loc[0] + "&lon=" + loc[1] + "&appid=" + api_key, function (wd) {
+        $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + loc[0] + "&lon=" + loc[1] + "&appid=" + api_key, function (wd) {
             console.log("Get the value", wd);
 
             var timezone = wd.name + "/" + wd.sys.country;
