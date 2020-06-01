@@ -3,10 +3,10 @@ $(document).ready(function () {
     var api_key = "f73fd9c61d759fb7881aaaee51fc4a28";
     var loc;
 
-    $.getJSON('http://ipinfo.io', function (data) {
+    $.getJSON('https://ipinfo.io', function (data) {
         loc = data.loc.split(",");
         console.log(loc);
-        $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + loc[0] + "&lon=" + loc[1] + "&appid=" + api_key, function (wd) {
+        $.getJSON("https://api.openweathermap.org/data/2.5/weather?lat=" + loc[0] + "&lon=" + loc[1] + "&appid=" + api_key, function (wd) {
             console.log("Get the value", wd);
 
             var timezone = wd.name + "/" + wd.sys.country;
