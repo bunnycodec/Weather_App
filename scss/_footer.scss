@@ -1,0 +1,57 @@
+footer {
+  letter-spacing: 0.3em;
+}
+
+.sunnyKumar {
+  font-family: ‘Josefin Sans’, sans-serif;
+  font-size: 100%;
+  font-weight: normal;
+  color: black;
+  letter-spacing: 0.1em;
+
+  a,
+  a:hover,
+  a:active,
+  a:visited {
+    background-image: linear-gradient(114.2deg, #FF5964, #0E273C 40%, #FF5964 60%, #0E273C 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none !important;
+    outline: none !important;
+  }
+}
+
+.social-buttons a {
+  display: inline-flex;
+  text-decoration: none;
+  font-size: 100%;
+  width: 2rem;
+  height: 2rem;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.social-buttons a::before {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: #FF3CAC;
+  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+  border-radius: 50%;
+  z-index: -1;
+  transition: 0.3s ease-in;
+}
+
+.social-buttons a i {
+  transition: 0.3s ease-in;
+}
+
+.social-buttons a:hover i {
+  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(2);
+}

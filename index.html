@@ -1,24 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Sunny Kumar" />
+    <meta name="description" content="A Every Place Weather App" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather-App</title>
+    <!-- Bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+      integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK"
+      crossorigin="anonymous"
+    />
+    <!-- Native CSS Minified Version from SCSS -->
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <!--  Font Awesome CDN  -->
+    <script
+      src="https://kit.fontawesome.com/2ebe23cffd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="author" content="Sunny Kumar" />
-  <meta name="description" content="A Weather App to check weather for all locations" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather-App</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
-    integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./style.css" />
-  <!-- Font Awesome Personal Kit -->
-  <script src="https://kit.fontawesome.com/2ebe23cffd.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <div class="app-container">
+      <!-- Header -->
+      <header class="pt-3">
+        <h1 class="text-dark text-center">Weather App</h1>
+      </header>
+      <!-- Main Body -->
+      <main>
+        <form class="change-location text-center text-dark pb-2">
+          <label for="city" class="pb-1 lead"
+            >Enter a location for weather information</label
+          >
+          <input type="text" name="city" class="form-control p-3 mx-auto" />
+        </form>
 
-<body>
+        <div class="card shadow-lg rounded">
+          <img
+            src="https://via.placeholder.com/400x300"
+            class="time img-fluid"
+          />
+          <div class="icon bg-light mx-auto text-center">
+            <!-- icon here later -->
+          </div>
+          <div class="text-muted text-uppercase text-center details my-auto py-3">
+            <h5 class="pt-3">City name</h5>
+            <div class="mt-3">Weather condition</div>
+            <div class="display-4 mt-3 mb-4">
+              <span>temp</span>
+              <span>&deg;C</span>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer
+        class="py-1 shadow-lg d-flex flex-column flex-sm-row justify-content-around align-items-center"
+      >
+        <div class="social-buttons">
+          <a href="https://www.linkedin.com/in/bunnycodec" class="m-1"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="https://www.github.com/bunnycodec" class="m-1"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://www.instagram.com/bit_2_byte/" class="m-1"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <div class="sunnyKumar">
+          Designed & Coded by
+          <a href="https://www.linkedin.com/in/bunnycodec" target="_blank"
+            >Sunny Kumar</a
+          >
+        </div>
+      </footer>
+    </div>
 
-
-  <script src="./scripts/forecast.js"></script>
-  <script src="./scripts/app.js"></script>
-</body>
-
+    <!-- Bootstrap 5 JS Bundled (Popper and B5) -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+      integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Native JS -->
+    <script src="./scripts/forecast.js"></script>
+    <script src="./scripts/app.js"></script>
+  </body>
 </html>
