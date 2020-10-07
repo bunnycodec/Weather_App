@@ -1,11 +1,17 @@
 @import './footer';
 
+body {
+  background-image: linear-gradient(114.2deg, rgba(121, 194, 243, 1) 22.6%, rgba(255, 180, 239, 1) 67.7%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 * {
   box-sizing: border-box;
 }
 
 .app-container {
-  background-image: linear-gradient(114.2deg, #FF5964 22.6%, #63C7B2 67.7%);
   min-width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -16,32 +22,47 @@ header {
   letter-spacing: 0.3em;
 
   h1 {
-    background-image: linear-gradient(114.2deg, #63C7B2 10%, #0E273C 50%, #FF5964 67.7%);
+    background-image: linear-gradient(112.1deg, rgba(32, 38, 57, 1) 11.4%, rgba(63, 76, 119, 1) 70.2%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: calc(2vw + 3vh + .5vmin);
+    font-size: calc(3vw + 4vh + .5vmin);
   }
 }
 
 main {
   flex: 1 1 auto;
-  padding: 1vh 0 1vh 0;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
 
-  .change-location {
-    // padding: 2vh 0 1vh 0;
-    input {
-      outline: none;
-      border: none;
-      min-width: 20vw;
-    }
+  form {
+    color: #6c757d;
+  }
+
+  .change-location input {
+    color: black;
+    outline: none;
+    border: none;
+    min-width: 20vw;
   }
 
   .card {
     letter-spacing: 0.2em;
     max-width: 400px;
+    border: 2px solid #ff5964;
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon {
+      margin-top: -50px;
+      border-radius: 50%;
+      border: 2px solid #ff5964;
+    }
   }
 }
