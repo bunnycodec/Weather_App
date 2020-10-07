@@ -104,5 +104,8 @@ cityForm.addEventListener('submit', e => {
   // Update the City Name
   getWeatherReport(city)
     .then(data => updateUI(data))
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      alert('No Such City Name Exist')
+    })
 })
