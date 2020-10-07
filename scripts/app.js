@@ -16,7 +16,7 @@ const updateUI = (data) => {
 
   // Setting Day or Night
   if (weather.IsDayTime) {
-    appBody.style.backgroundImage = "url('../img/day.svg')"
+    appBody.style.backgroundImage = "url('./day.svg')"
     appHeader.style.backgroundImage = "linear-gradient(114.2deg, #63C7B2 10%, #0E273C 50%, #FF5964 67.7%)"
     cityForm.style.color = '#6c757d'
     appInput.style.backgroundColor = '#6c757d'
@@ -39,7 +39,7 @@ const updateUI = (data) => {
       details.classList.add('text-secondary')
     }
   } else {
-    appBody.style.backgroundImage = "url('../img/night.svg')"
+    appBody.style.backgroundImage = "url('./night.svg')"
     appHeader.style.backgroundImage = "linear-gradient(114.2deg, #63C7B2 30%, #FF5964 67.7%)"
     cityForm.style.color = '#6c757d'
     appInput.style.backgroundColor = '#6c757d'
