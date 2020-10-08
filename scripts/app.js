@@ -6,18 +6,15 @@ const appBody = document.querySelector('body')
 const appHeader = document.querySelector('header h1')
 const appInput = document.querySelector('form input')
 
-
 // Updating the HTML with the API values
 const updateUI = (data) => {
-  const {
-    cityDetails,
-    weather
-  } = data
+  const { cityDetails, weather } = data
 
   // Setting Day or Night
   if (weather.IsDayTime) {
     appBody.style.backgroundImage = "url('./day.svg')"
-    appHeader.style.backgroundImage = "linear-gradient(114.2deg, #63C7B2 10%, #0E273C 50%, #FF5964 67.7%)"
+    appHeader.style.backgroundImage =
+      'linear-gradient(114.2deg, #63C7B2 10%, #0E273C 50%, #FF5964 67.7%)'
     cityForm.style.color = '#6c757d'
     appInput.style.backgroundColor = '#6c757d'
     appInput.style.color = '#f8f9fa'
@@ -40,7 +37,8 @@ const updateUI = (data) => {
     }
   } else {
     appBody.style.backgroundImage = "url('./night.svg')"
-    appHeader.style.backgroundImage = "linear-gradient(114.2deg, #63C7B2 30%, #FF5964 67.7%)"
+    appHeader.style.backgroundImage =
+      'linear-gradient(114.2deg, #63C7B2 30%, #FF5964 67.7%)'
     cityForm.style.color = '#6c757d'
     appInput.style.backgroundColor = '#6c757d'
     appInput.style.color = '#f8f9fa'
@@ -79,7 +77,6 @@ const updateUI = (data) => {
   if (card.classList.contains('d-none')) {
     card.classList.remove('d-none')
   }
-
 }
 
 // City and Weather Update
@@ -89,11 +86,11 @@ const getWeatherReport = async (city) => {
 
   return {
     cityDetails,
-    weather
+    weather,
   }
 }
 
-cityForm.addEventListener('submit', e => {
+cityForm.addEventListener('submit', (e) => {
   // Prevent from Loading Page
   e.preventDefault()
 
@@ -103,9 +100,22 @@ cityForm.addEventListener('submit', e => {
 
   // Update the City Name
   getWeatherReport(city)
-    .then(data => updateUI(data))
-    .catch(err => {
+    .then((data) => updateUI(data))
+    .catch((err) => {
       console.log(err)
       alert('No Such City Name Exist')
     })
+
+  // Setting Local Storage
+  localStorage.setItem('city', city)
 })
+
+// Updating Page with Local Storage
+if (localStorage.getItem('city')) {
+  getWeatherReport(localStorage.getItem('city'))
+    .then((data) => updateUI(data))
+    .catch((err) => {
+      console.log(err)
+      alert('No Such City Name Exist')
+    })
+}
