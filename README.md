@@ -18,4 +18,10 @@ I am Here : [Weather App](https://bunnycodec.github.io/Weather_App/)
 * Page Automatically Loads to User last searched city
 * Footer Updated
 * SCSS included for better CSS
+  
+### v2.2
+
+---
+* OOPs Concept Implemented
+* Issue #1 Resolved -- ( UI improvement 1: Footer text color change )
 

@@ -5,6 +5,9 @@ const icon = document.querySelector('.icon img')
 const appBody = document.querySelector('body')
 const appHeader = document.querySelector('header h1')
 const appInput = document.querySelector('form input')
+const socialButtons = document.querySelectorAll('.social-buttons a')
+
+const forecast = new Forecast()
 
 // Updating the HTML with the API values
 const updateUI = (data) => {
@@ -20,6 +23,9 @@ const updateUI = (data) => {
     appInput.style.color = '#f8f9fa'
     card.style.border = '2px solid #343a40'
     document.querySelector('.icon').style.border = '2px solid #343a40'
+    socialButtons.forEach(current => {
+      current.style.color = '#000'
+    });
     // Manipulating B5 Class
     if (card.classList.contains('bg-dark')) {
       // Removing Classes
@@ -44,6 +50,9 @@ const updateUI = (data) => {
     appInput.style.color = '#f8f9fa'
     card.style.border = '2px solid #ff5964'
     document.querySelector('.icon').style.border = '2px solid #ff5964'
+    socialButtons.forEach(current => {
+      current.style.color = '#ff5964'
+    });
     // Manipulating B5 Class
     if (card.classList.contains('bg-light')) {
       // Removing Classes
@@ -79,17 +88,7 @@ const updateUI = (data) => {
   }
 }
 
-// City and Weather Update
-const getWeatherReport = async (city) => {
-  const cityDetails = await getCity(city)
-  const weather = await getWeather(cityDetails.Key)
-
-  return {
-    cityDetails,
-    weather,
-  }
-}
-
+// Main Calling Function
 cityForm.addEventListener('submit', (e) => {
   // Prevent from Loading Page
   e.preventDefault()
@@ -99,7 +98,7 @@ cityForm.addEventListener('submit', (e) => {
   cityForm.reset()
 
   // Update the City Name
-  getWeatherReport(city)
+  forecast.getWeatherReport(city)
     .then((data) => updateUI(data))
     .catch((err) => {
       console.log(err)
@@ -110,12 +109,12 @@ cityForm.addEventListener('submit', (e) => {
   localStorage.setItem('city', city)
 })
 
-// Updating Page with Local Storage
-if (localStorage.getItem('city')) {
-  getWeatherReport(localStorage.getItem('city'))
-    .then((data) => updateUI(data))
-    .catch((err) => {
-      console.log(err)
-      alert('No Such City Name Exist')
-    })
-}
+// // Updating Page with Local Storage
+// if (localStorage.getItem('city')) {
+//   forecast.getWeatherReport(localStorage.getItem('city'))
+//     .then((data) => updateUI(data))
+//     .catch((err) => {
+//       console.log(err)
+//       alert('No Such City Name Exist')
+//     })
+// }
