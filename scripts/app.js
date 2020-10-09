@@ -6,12 +6,17 @@ const appBody = document.querySelector('body')
 const appHeader = document.querySelector('header h1')
 const appInput = document.querySelector('form input')
 const socialButtons = document.querySelectorAll('.social-buttons a')
+const button = document.querySelector('.btnCSS')
+const spinner = document.querySelector('.spinner')
 
 const forecast = new Forecast()
 
 // Updating the HTML with the API values
 const updateUI = (data) => {
-  const { cityDetails, weather } = data
+  const {
+    cityDetails,
+    weather
+  } = data
 
   // Setting Day or Night
   if (weather.IsDayTime) {
@@ -23,6 +28,8 @@ const updateUI = (data) => {
     appInput.style.color = '#f8f9fa'
     card.style.border = '2px solid #343a40'
     document.querySelector('.icon').style.border = '2px solid #343a40'
+    button.style.backgroundImage = 'linear-gradient(to right, #343a40 40%, #1C2735 99%)'
+    button.style.color = '#fff'
     socialButtons.forEach(current => {
       current.style.color = '#000'
     });
@@ -50,6 +57,8 @@ const updateUI = (data) => {
     appInput.style.color = '#f8f9fa'
     card.style.border = '2px solid #ff5964'
     document.querySelector('.icon').style.border = '2px solid #ff5964'
+    button.style.backgroundImage = 'linear-gradient(to right, #343a40 40%, #1C2735 99%)'
+    button.style.color = '#ff5964'
     socialButtons.forEach(current => {
       current.style.color = '#ff5964'
     });
@@ -78,6 +87,7 @@ const updateUI = (data) => {
       <span> ${weather.Temperature.Metric.Value} &deg;C </span>
     </div>
   `
+
   // Setting Icon
   const iconsrc = `./img/icons/${weather.WeatherIcon}.svg`
   icon.setAttribute('src', iconsrc)
@@ -96,6 +106,13 @@ cityForm.addEventListener('submit', (e) => {
   // Getting the Value typed in input box
   const city = cityForm.city.value.trim()
   cityForm.reset()
+
+  // Spinner Starts
+  spinner.classList.remove('d-none')
+
+  // Card is display none untill data is fetched
+  if (!card.classList.contains('d-none'))
+    card.classList.add('d-none')
 
   // Update the City Name
   forecast.getWeatherReport(city)

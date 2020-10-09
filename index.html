@@ -34,16 +34,30 @@
           <label for="city" class="pb-1 lead"
             >Enter A Valid City Name for Weather Information</label
           >
-          <input
-            type="text"
-            name="city"
-            class="form-control p-3 mx-auto"
-          />
+          <div class="d-flex">
+            <input type="text" name="city" class="w-75 form-control p-3 mr-1" />
+            <button class="w-25 btnCSS rounded shadow">
+              <i class="fas fa-cloud-sun-rain fa-2x"></i>
+            </button>
+          </div>
         </form>
+
+        <!-- <div class="spinner-border d-none" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div> -->
+
+        <div class="sk-chase spinner d-none">
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+        </div>
 
         <div class="card shadow-lg rounded mt-4 px-5 pb-5 bg-dark d-none">
           <div class="icon mx-auto bg-dark">
-            <img src="./img/icons/1.svg" alt="Weather Icon"/>
+            <img src="./img/icons/1.svg" alt="Weather Icon" />
           </div>
           <div class="text-uppercase details text-secondary">
             <h5 class="pt-3">City name</h5>

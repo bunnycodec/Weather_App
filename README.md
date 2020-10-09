@@ -24,4 +24,6 @@ I am Here : [Weather App](https://bunnycodec.github.io/Weather_App/)
 ---
 * OOPs Concept Implemented
 * Issue #1 Resolved -- ( UI improvement 1: Footer text color change )
+* Issue #2 Resolved -- ( UI improvement 2: Loading animation )
+* Issue #3 Resolved -- ( UI improvement 3: Generate button )
 
